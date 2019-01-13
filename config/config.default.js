@@ -1,20 +1,44 @@
-'use strict';
+'use strict'
 
 module.exports = appInfo => {
-  const config = {};
+    const config = {}
 
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1547291824346_7234';
+    // use for cookie sign key, should change to your own and keep security
+    config.keys = appInfo.name + '_1547291824346_7234'
 
-  // add your config here
-  config.middleware = [];
+    // add your config here
+    config.middleware = []
 
-  config.view = {
-      defaultViewEngine:'nunjucks',
-      mapping:{
-          '.tpl':'nunjucks'
-      }
-  }
+    config.view = {
+        defaultViewEngine: 'nunjucks',
+        mapping: {
+            '.tpl': 'nunjucks'
+        }
+    }
 
-  return config;
-};
+    config.mysql = {
+        client: {
+            host: 'localhost',
+            port: '3306',
+            user: 'root',
+            password: 'Qq898989',
+            database: 'egg'
+        },
+        app: true,
+        agent: false
+    }
+
+    config.security = {
+        csrf: {
+            enable: false,
+        },
+    }
+
+
+    config.cors = {
+        origin: '*',
+        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+    };
+
+    return config
+}
