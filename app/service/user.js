@@ -5,7 +5,7 @@ class UserService extends Service {
         const user = await this.app.mysql.get('dev').select('t_activity_address', {
             where: {
                 uid: [params.uid],
-                customer: [params.customer]
+                // customer: [params.customer]
             }
         })
         return {user}
