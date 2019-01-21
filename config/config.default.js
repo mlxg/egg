@@ -17,12 +17,22 @@ module.exports = appInfo => {
     }
 
     config.mysql = {
-        client: {
-            host: 'localhost',
-            port: '3306',
-            user: 'root',
-            password: 'Qq898989',
-            database: 'egg'
+        clients: {
+            dev: {
+                host: '172.18.1.77',
+                port: '3306',
+                user: 'root',
+                password: 'club@1.77',
+                database: 'club'
+            },
+            // local: {
+            //     host: 'localhost',
+            //     port: '3306',
+            //     user: 'root',
+            //     password: 'root',
+            //     database: ''
+            // }
+
         },
         app: true,
         agent: false
@@ -38,7 +48,7 @@ module.exports = appInfo => {
     config.cors = {
         origin: '*',
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
-    };
+    }
 
     return config
 }

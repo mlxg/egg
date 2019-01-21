@@ -1,15 +1,15 @@
-const Service = require('egg').Service;
+const Service = require('egg').Service
 
 class UserService extends Service {
     async find(params) {
-        const user = await this.app.mysql.get('user', params);
-        return { user };
-    }
-
-    async insert(params) {
-        const user = await this.app.mysql.insert('user', params);
-        return { user };
+        const user = await this.app.mysql.get('dev').select('t_activity_address', {
+            where: {
+                uid: [params.uid],
+                customer: [params.customer]
+            }
+        })
+        return {user}
     }
 }
 
-module.exports = UserService;
+module.exports = UserService

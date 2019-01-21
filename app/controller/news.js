@@ -5,7 +5,7 @@ const Controller = require('egg').Controller
 class NewsController extends Controller {
     async list() {
         const dataList = await NewsController.other()
-
+        
         this.ctx.body = {
             code: 0,
             msg: 'success',
