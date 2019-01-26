@@ -1,19 +1,23 @@
-const Controller = require('egg').Controller
+'use strict';
+
+const Controller = require('egg').Controller;
 
 class UserController extends Controller {
-    async info() {
-        const ctx = this.ctx
-        const queryObj = ctx.query;
-        const user = await ctx.service.user.find(queryObj)
+  async info() {
 
-        ctx.body = {
-            code: 0,
-            msg: 'success',
-            data: user
-        }
+    const ctx = this.ctx;
+    const queryObj = ctx.query;
+    console.log(queryObj);
+    const user = await ctx.service.user.find(queryObj);
+
+    ctx.body = {
+      code: 0,
+      msg: 'success',
+      data: user
+    };
 
 
-    }
+  }
 }
 
-module.exports = UserController
+module.exports = UserController;

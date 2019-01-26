@@ -2,9 +2,9 @@ const Service = require('egg').Service
 
 class UserService extends Service {
     async find(params) {
-        const user = await this.app.mysql.get('dev').select('t_activity_address', {
+        const user = await this.app.mysql.get('dev').select('user', {
             where: {
-                uid: [params.uid],
+                id: [params.id],
                 // customer: [params.customer]
             }
         })

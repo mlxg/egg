@@ -18,20 +18,20 @@ module.exports = appInfo => {
 
     config.mysql = {
         clients: {
-            dev: {
-                host: '172.18.1.77',
-                port: '3306',
-                user: 'root',
-                password: 'club@1.77',
-                database: 'club'
-            },
-            // local: {
-            //     host: 'localhost',
+            // dev: {
+            //     host: '172.18.1.77',
             //     port: '3306',
             //     user: 'root',
-            //     password: 'root',
-            //     database: ''
-            // }
+            //     password: 'club@1.77',
+            //     database: 'club'
+            // },
+            dev: {
+                host: 'localhost',
+                port: '3306',
+                user: 'debian-sys-maint',
+                password: 'GgXpE86OYgR1dXDW',
+                database: 'app'
+            }
 
         },
         app: true,
