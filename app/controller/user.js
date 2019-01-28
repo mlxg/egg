@@ -7,7 +7,6 @@ class UserController extends Controller {
 
     const ctx = this.ctx;
     const queryObj = ctx.query;
-    console.log(queryObj);
     const user = await ctx.service.user.find(queryObj);
 
     ctx.body = {

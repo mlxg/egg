@@ -1,20 +1,20 @@
-'use strict'
+'use strict';
 
 module.exports = appInfo => {
-    const config = {}
+    const config = {};
 
     // use for cookie sign key, should change to your own and keep security
-    config.keys = appInfo.name + '_1547291824346_7234'
+    config.keys = appInfo.name + '_1547291824346_7234';
 
     // add your config here
-    config.middleware = []
+    config.middleware = [];
 
     config.view = {
         defaultViewEngine: 'nunjucks',
         mapping: {
             '.tpl': 'nunjucks'
         }
-    }
+    };
 
     config.mysql = {
         clients: {
@@ -36,19 +36,29 @@ module.exports = appInfo => {
         },
         app: true,
         agent: false
-    }
+    };
 
     config.security = {
         csrf: {
             enable: false,
         },
-    }
+    };
 
 
     config.cors = {
         origin: '*',
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
-    }
+    };
 
-    return config
-}
+    config.redis = {
+        client: {
+            port: 6379,
+            host: 'localhost',
+            password: 'admin',
+            db: 0
+        }
+    };
+
+
+    return config;
+};
