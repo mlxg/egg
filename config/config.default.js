@@ -28,8 +28,8 @@ module.exports = appInfo => {
             dev: {
                 host: 'localhost',
                 port: '3306',
-                user: 'debian-sys-maint',
-                password: 'GgXpE86OYgR1dXDW',
+                user: 'root',
+                password: 'admin',
                 database: 'app'
             }
 
